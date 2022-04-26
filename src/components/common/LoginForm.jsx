@@ -34,6 +34,7 @@ class LoginForm extends Component {
             setAccessTokens(res.data.accessToken)
             this.setState({ user: res.data })
             console.log("user is logining successfuly")
+            this.props.handelLogin(res.data)
 
 
         } catch (err) {
@@ -44,7 +45,7 @@ class LoginForm extends Component {
 
     render() {
 
-        return (<div>
+        return (<div style={{ width: "50%", margin: "auto" }}>
             <h2>Login </h2>
             {this.state.user && <Navigate to="/" replace={true} />
             }
