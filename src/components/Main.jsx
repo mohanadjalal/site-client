@@ -7,8 +7,11 @@ import SignupForm from "./common/SignupFrom";
 import LoginForm from "./common/LoginForm";
 import NavBar from "./common/NavBar";
 import NotFound from "./common/NotFound";
+import Profile from "./Profile";
 
 import { getAccessTokens } from "../utils/accessToken";
+import Config from "../config/config"
+
 
 
 class Main extends Component {
@@ -25,7 +28,7 @@ class Main extends Component {
 
     if (tokens) {
       try {
-        const res = await axios.get("http://localhost:8080/api/profile/", {
+        const res = await axios.get(Config.PROFILE_ENDPOINT, {
           headers: { "x-access-token": tokens },
         });
         this.setState({ user: res.data });
@@ -42,17 +45,22 @@ class Main extends Component {
 
 
   render() {
+    const user = this.state.user
+  
     return (
       <BrowserRouter>
-        <NavBar user={this.state.user} />
+        <NavBar user={user} />
         <main className="container">
           <Routes>
-            <Route path="/" element={<HomePage />} />
+
             <Route path="/signup" element={<SignupForm />} />
             <Route
               path="/login"
               element={<LoginForm handelLogin={this.handelLogin} />}
             />
+            <Route path="/" element={<HomePage />} />
+
+            <Route path="/profile" element={<Profile user={user} />} />
             <Route
               path="*"
               element={<NotFound />}

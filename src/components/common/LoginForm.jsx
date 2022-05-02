@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { setAccessTokens } from '../../utils/accessToken';
 import { Navigate } from "react-router-dom";
 import Input from './Input';
+import Config from '../../config/config';
+import { setAccessTokens } from '../../utils/accessToken';
+
 class LoginForm extends Component {
     constructor(props) {
         super(props);
@@ -29,7 +31,7 @@ class LoginForm extends Component {
     handelSubmit = async () => {
 
         try {
-            const res = await axios.post("http://localhost:8080/api/auth/signin", this.state.data)
+            const res = await axios.post(Config.LOGIN_ENDPOIN, this.state.data)
             alert("done")
             setAccessTokens(res.data.accessToken)
             this.setState({ user: res.data })

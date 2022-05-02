@@ -3,6 +3,7 @@ import axios from "axios";
 import { Navigate } from "react-router-dom";
 
 import Input from "./Input";
+import Config from "../../config/config";
 class SignupForm extends Component {
   constructor(props) {
     super(props);
@@ -28,8 +29,7 @@ class SignupForm extends Component {
 
   handelSubmit = async () => {
     try {
-      const res = await axios.post(
-        "http://localhost:8080/api/auth/signup",
+      const res = await axios.post(Config.SIGNUP_ENDPOINT,
         this.state.data
       );
       alert("done");
