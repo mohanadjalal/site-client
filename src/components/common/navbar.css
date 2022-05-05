@@ -1,0 +1,50 @@
+.home-link{
+  text-decoration: none;
+  color: dodgerblue;
+  font-size: xx-large;
+  font-weight: 500;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+
+.link-btns{
+  margin-right: 1%;
+}
+
+
+.link-btn  {
+  text-decoration: none;
+  color: dodgerblue;
+  border: solid dodgerblue;
+  border-radius: 10%;
+  padding: 5%;
+  margin: 2%;
+  
+}
+
+.link-btn:hover , .link-btn:active {
+  color: dodgerblue;
+}
+
+.link-login:hover{
+  background-color: rgb(241, 249, 255);
+ 
+}
+
+.link-signup{
+  background-color: dodgerblue;
+  color: white;
+}
+.link-signup:hover{
+  background-color: rgba(0, 128, 255, 0.753);
+ color: white;
+}
+
+.link-profile{
+  margin-right: "2px" ;
+    margin-right: 10px;
+  height: 90%;
+  text-decoration: none;
+  color: "dodgerblue";
+  display: inline-block;
+}
+

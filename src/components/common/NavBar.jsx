@@ -6,6 +6,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { removeAccessTokens } from "../../utils/accessToken";
+import "./navbar.css"
 
 class NavBar extends Component {
   constructor(props) {
@@ -20,14 +21,15 @@ class NavBar extends Component {
   };
   toProfile = () => {
     window.location.replace("/profile")
+
   }
 
   render() {
 
     return (
-      <nav className="navbar navbar-light bg-light">
+      <nav className="navbar navbar-light bg-dark text-white">
         <div className="container-fluid">
-          <Link className="home-link" to="/">
+          <Link className="home-link " to="/">
             Home
           </Link>
           {this.props.user ? this.renderUser() : this.renderGuest()}
@@ -38,12 +40,13 @@ class NavBar extends Component {
   renderUser = () => {
     const user = this.props.user;
     return (
-      <div>
-        <span style={{ marginRight: "2px" }} onClick={this.toProfile}>
-          <FontAwesomeIcon icon={faUser} style={{ fontSize: "24px" }} />{" "}
-          {user.username}
-        </span>
-        <span onClick={this.handelLogout} className="btn">
+      <div className="  ">
+
+        <Link to="/profile" className="link-profile  " > <FontAwesomeIcon icon={faUser} style={{ fontSize: "24px", marginRight: "5px" }} />
+          {user.username}</Link>
+
+
+        <span onClick={this.handelLogout} className="" style={{ color: "dodgerblue", }}>
           Logout
         </span>
       </div>
