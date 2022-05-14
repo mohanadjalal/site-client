@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Link } from "react-router-dom"
-function UserProfile(props) {
-    const { path, user, handelEdit } = props
+function UserProfile(props) { 
+    const { path, user } = props
 
     return (
         <div>
@@ -18,12 +18,12 @@ function UserProfile(props) {
                                         width="130"
                                         className="rounded mb-2 img-thumbnail"
                                     />
-                                    <button
+                                    <Link
                                         className="btn btn-outline-dark btn-sm btn-block"
-                                        onClick={handelEdit}
+                                        to="/edit-profile"
                                     >
                                         Edit profile
-                                    </button>
+                                    </Link>
                                 </div>
                                 <div className="media-body mb-5 text-white">
                                     <h4 className="mt-0 mb-0">{user.name}</h4>

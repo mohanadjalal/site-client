@@ -8,6 +8,7 @@ import LoginForm from "./common/LoginForm";
 import NavBar from "./common/NavBar";
 import NotFound from "./common/NotFound";
 import Profile from "./Profile";
+import EditProfile from "./common/EditProfile"
 
 import { getAccessTokens } from "../utils/accessToken";
 import Config from "../config/config"
@@ -61,6 +62,7 @@ class Main extends Component {
             <Route path="/" element={<HomePage />} />
 
             <Route path="/profile" element={<Profile user={user} />} />
+            <Route path="/edit-profile" element={<EditProfile />} />
             <Route
               path="*"
               element={<NotFound />}
