@@ -54,11 +54,7 @@ function UserProfile(props) {
                         <div className="px-4 py-3">
                             <h5 className="mb-0">About</h5>
                             <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Ullam reprehenderit numquam distinctio enim, natus fugit
-                                delectus facilis architecto deserunt neque incidunt quidem
-                                dolorem officiis perspiciatis tempore. Iste corporis
-                                voluptates ea.
+                                {user.about}
                             </p>
                         </div>
                         <div className="py-4 px-4">
